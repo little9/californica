@@ -1,5 +1,5 @@
 default: &default
-  adapter:      <%= ENV['DATABASE_ADAPTER'] || 'postgresql' %>
+  adapter:      <%= ENV['DATABASE_ADAPTER'] || 'mysql' %>
   encoding:     unicode
   pool:         <%= ENV['DATABASE_POOL'] || 5 %>
   timeout:      5000
@@ -23,5 +23,6 @@ test:
 
 production:
   <<: *default
-  adapter:  'postgresql'
+  adapter:  'mysql'
   database: <%= ENV['DATABASE_NAME'] %>
+  pool:     <%= ENV['DATABASE_POOL'] || 20 %>
