@@ -7,7 +7,7 @@ RSpec.describe Hyrax::WorkPresenter, type: :presenter do
   subject(:presenter) { described_class.new(document, ability, request) }
   let(:ability)       { nil }
   let(:document)      { SolrDocument.new(work.to_solr) }
-  let(:request)       { nil }
+  let(:request)       { instance_double('Rack::Request', host: 'example.com') }
   let(:work)          { Work.create(title: ['foo title']) }
 
   describe '#export_as_ttl' do
