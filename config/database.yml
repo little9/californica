@@ -1,6 +1,5 @@
 default: &default
   adapter:      <%= ENV['DATABASE_ADAPTER'] || 'mysql2' %>
-  #encoding:     unicode
   pool:         <%= ENV['DATABASE_POOL'] || 5 %>
   timeout:      5000
   host:         <%= ENV['DATABASE_HOST'] || 'localhost' %>
